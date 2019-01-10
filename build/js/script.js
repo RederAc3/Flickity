@@ -21,3 +21,12 @@ flkty.on( 'scroll', function( progress ) {
 });
 
 
+var templateCarousell = document.getElementById('template-carousell');
+
+Mustache.parse(templateCarousell);
+
+var generateCarousell = Mustache.render(templateCarousell, carousell);
+
+var results = document.getElementsByClassName('results');
+
+results.insertAdjacentHTML('beforeend', generateCarousell);
