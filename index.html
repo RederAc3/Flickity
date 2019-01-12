@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Flickity</title>
-    <!--    <link rel="stylesheet" href="vendor/Normalize.css">-->
+    <link rel="stylesheet" href="vendor/Normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href="vendor/Normalize.css">
     <link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
@@ -15,61 +15,16 @@
     <div class="main">
         <div class="main-carousel" id="carousell" data-flickity='{"hash": true}'>
 
-            <!-- <div class="carousel-cell" id="carousel-cell1" style="background-image: url(http://new.wiatrowski.com.pl/wp-content/uploads/2016/08/slide2-1-1-1024x412.jpg)"> -->
-            <!-- <div class="container"> -->
-            <!-- <p>Danie Dnia</p>
-                    <a href="#carousel-cell1">
-                        <div class="button"><i class="fas fa-angle-double-left"></i></div>
-                    </a> -->
-            <!-- </div> -->
-            <!-- </div> -->
-            <!-- <div class="carousel-cell" id="carousel-cell2" style="background-image: url(http://zaczarowanyolowek.org.pl/wp-content/uploads/2018/04/kyle-glenn-352480-unsplash-e1524266137699-1024x412.jpg)"> -->
-            <!-- <div class="container"> -->
-            <!-- <p>Sztuka nowoczesna</p>
-                    <a href="#carousel-cell1">
-                        <div class="button"><i class="fas fa-angle-double-left"></i></div>
-                    </a> -->
-            <!-- </div> -->
-            <!-- </div> -->
-            <!-- <div class="carousel-cell" id="carousel-cell3" style="background-image: url(http://new.wiatrowski.com.pl/wp-content/uploads/revslider/home-2/slide3-1.jpg)"> -->
-            <!-- <div class="container"> -->
-            <!-- <p>Przekąski</p>
-                    <a href="#carousel-cell1">
-                        <div class="button"><i class="fas fa-angle-double-left"></i></div>
-                    </a> -->
-            <!-- </div> -->
-            <!-- </div> -->
-            <!-- <div class="carousel-cell" id="carousel-cell4" style="background-image: url(https://itreseller.com.pl/wp-content/uploads/2017/02/Huawei-P10-5-1024x412.jpg)"> -->
-            <!-- <div class="container"> -->
-            <!-- <p>Konferencja</p>
-                    <a href="#carousel-cell1">
-                        <div class="button"><i class="fas fa-angle-double-left"></i></div>
-                    </a> -->
-            <!-- </div> -->
-            <!-- </div> -->
-            <!-- <div class="carousel-cell" id="carousel-cell5" style="background-image: url(http://katoobywatel.katowice.eu/wp-content/uploads/2018/11/strefa1.jpg)"> -->
-            <!-- <div class="container"> -->
-            <!-- <p>Katowice</p>
-                    <a href="#carousel-cell1">
-                        <div class="button"><i class="fas fa-angle-double-left"></i></div>
-                    </a> -->
-            <!-- </div> -->
-            <!-- </div>
-
         </div>
         <div class="progress-bar"></div>
-    </div>
-    <div class="container"></div> -->
-
-        </div>
     </div>
 
     <script id="template-carousell" type="x-tmpl-mustache">
             <div class="carousel-cell" id="carousel-cell{{ number }}" style="background-image: url( {{& image }} )">
                 <div class="container">
-                   <p> {{ title }} </p>
-                    <a href="#carousel-cell{{ number }}">
-                        <div class="button"><i class="fas fa-angle-double-left"></i></div>
+                   <p> {{ title }}</p>
+                    <a href="#carousel-cell1">
+                        {{{ description }}}
                     </a>
                 </div>
             </div>
@@ -78,22 +33,28 @@
     <script>
         var carousell = [
             {
-                number: 1,
+                number: '1',
                 image: 'http://katoobywatel.katowice.eu/wp-content/uploads/2018/11/strefa1.jpg',
                 title: 'Katowice',
-                description: '<p> Witam to są bardzo ważne słowa</p>'
+                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>'
             },
             {
-                number: 2,
+                number: '2',
                 image: 'http://zaczarowanyolowek.org.pl/wp-content/uploads/2018/04/kyle-glenn-352480-unsplash-e1524266137699-1024x412.jpg',
-                title: 'Katowice',
-                description: '<p> Witam to są bardzo ważne słowa</p>'
+                title: 'Sztuka nowoczesna',
+                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>'            
             },
             {
-                number: 3,
+                number: '3',
                 image: 'https://itreseller.com.pl/wp-content/uploads/2017/02/Huawei-P10-5-1024x412.jpg',
-                title: 'Katowice',
-                description: '<p> Witam to są bardzo ważne słowa</p>'
+                title: 'Konferencja',
+                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>'
+            },
+            {
+                number: '4',
+                image: 'https://www.podrozepokulturze.pl/wp-content/uploads/2017/10/frida-kahlo-poznan-zamek-4-1024x412.jpg',
+                title: 'Muzeum',
+                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>'
             },
         ];
     </script>

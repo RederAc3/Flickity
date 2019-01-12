@@ -2,12 +2,10 @@ var templateCarousell = document.getElementById('template-carousell').innerHTML;
 
 Mustache.parse(templateCarousell);
 var carousellItems = '';
-// var generateCarousell  = Mustache.render(templateCarousell, carousell);
-var results = document.getElementById('carousell');
+var results = document.querySelector('#carousell');
 console.log(results);
 for(var i = 0; i< carousell.length; i++) {
     console.log(carousell);
-    // carousellItems += Mustache.render(templateCarousell, carousell[i]);
     results.insertAdjacentHTML('beforeend', Mustache.render(templateCarousell, carousell[i]));
     console.log(carousellItems);
 }

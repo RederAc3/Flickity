@@ -1,6 +1,24 @@
+var templateCarousell = document.getElementById('template-carousell').innerHTML;
+
+Mustache.parse(templateCarousell);
+var carousellItems = '';
+// var generateCarousell  = Mustache.render(templateCarousell, carousell);
+var results = document.querySelector('#carousell');
+console.log(results);
+for(var i = 0; i< carousell.length; i++) {
+    console.log(carousell);
+    // carousellItems += Mustache.render(templateCarousell, carousell[i]);
+    results.insertAdjacentHTML('beforeend', Mustache.render(templateCarousell, carousell[i]));
+    console.log(carousellItems);
+}
+
+
+
+
+
 var elem = document.querySelector('.main-carousel');
 var button = document.querySelector('.button');
-var progressBar = document.querySelector('.progress-bar')
+var progressBar = document.querySelector('.progress-bar');
 
 button = fizzyUIUtils.makeArray( button );
 
@@ -21,12 +39,3 @@ flkty.on( 'scroll', function( progress ) {
 });
 
 
-var templateCarousell = document.getElementById('template-carousell');
-
-Mustache.parse(templateCarousell);
-
-var generateCarousell = Mustache.render(templateCarousell, carousell);
-
-var results = document.getElementsByClassName('results');
-
-results.insertAdjacentHTML('beforeend', generateCarousell);
