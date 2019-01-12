@@ -13,7 +13,6 @@ body {
             background-size: cover;
             background-repeat: no-repeat;
             counter-increment: carousel-cell;
-            // z-index: -1;
 
             .container {
                 display: flex;
@@ -22,21 +21,9 @@ body {
                 width: 1200px;
                 height: 100%;
                 margin: 0 auto;
-                //                height: 300px;
-                //                margin: 10px;
-
-                //                & ::before {
-                //                    display: block;
-                //                    text-align: center;
-                //                    content: counter(carousel-cell);
-                //                    line-height: 200px;
-                //                    font-size: 80px;
-                //                    color: white;
-                //                }
 
                 p {
                     width: 400px;
-                    //                    height: 30px;
                     padding: 30px;
                     background-color: rgba(0, 0, 0, .5);
                     color: #fff;
@@ -114,7 +101,6 @@ body {
         height: 10px;
         width: 0;
         bottom: 0;
-        // margin-top: -10px;
         background: #333;
         z-index: 999;
     }

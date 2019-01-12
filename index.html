@@ -17,6 +17,7 @@
 
         </div>
         <div class="progress-bar"></div>
+        <div id="map"></div>
     </div>
 
     <script id="template-carousell" type="x-tmpl-mustache">
@@ -36,25 +37,32 @@
                 number: '1',
                 image: 'http://katoobywatel.katowice.eu/wp-content/uploads/2018/11/strefa1.jpg',
                 title: 'Katowice',
-                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>'
+                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>',
+                coords: {lat:  50.258, lng: 19.027}
             },
             {
                 number: '2',
                 image: 'http://zaczarowanyolowek.org.pl/wp-content/uploads/2018/04/kyle-glenn-352480-unsplash-e1524266137699-1024x412.jpg',
                 title: 'Sztuka nowoczesna',
-                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>'            
+                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>',
+                coords: {lat: 52.229, lng: 21.011}
+            
             },
             {
                 number: '3',
                 image: 'https://itreseller.com.pl/wp-content/uploads/2017/02/Huawei-P10-5-1024x412.jpg',
                 title: 'Konferencja',
-                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>'
+                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>',
+                coords: {lat: 35.689, lng: 139.691}
+
             },
             {
                 number: '4',
                 image: 'https://www.podrozepokulturze.pl/wp-content/uploads/2017/10/frida-kahlo-poznan-zamek-4-1024x412.jpg',
                 title: 'Muzeum',
-                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>'
+                description: '<div class="button"><i class="fas fa-angle-double-left"></i></div>',
+                coords: {lat: 50.0614, lng: 19.9365}
+
             },
         ];
     </script>
@@ -62,6 +70,10 @@
     <script src="js/hash.js"></script>
     <script src="vendor/mustache.min.js"></script>
     <script src="js/script.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzc9V_2idsWI6-EdbsHPjPBA3PFziuuTI&callback=initMap">
+    </script>
+    
 </body>
 
 </html>
