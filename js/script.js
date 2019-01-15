@@ -57,27 +57,10 @@ window.initMap = function() {
           center: carousell[0].coords
       });
 
-   var markerOne = new google.maps.Marker({
-      
-      position: carousell[0].coords, 
-      map: map
-  });
-
-  var markerTwo = new google.maps.Marker({
-      
-      position: carousell[1].coords, 
-      map: map
-  });
-
-  var markerThere = new google.maps.Marker({
-      
-      position: carousell[2].coords, 
-      map: map
-  });
-
-  var markerFour = new google.maps.Marker({
-      
-    position: carousell[3].coords, 
-    map: map
-});
+  for (var i=0; i<carousell.length; i++) {
+        var marker = new google.maps.Marker({
+          position: carousell[i].coords,
+          map: map
+        });
+      };
 };
