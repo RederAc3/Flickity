@@ -1,3 +1,7 @@
+
+
+// ##########################--MUSTACHE--########################################
+
 var templateCarousell = document.getElementById('template-carousell').innerHTML;
 
 Mustache.parse(templateCarousell);
@@ -11,7 +15,7 @@ for(var i = 0; i< carousell.length; i++) {
 }
 
 
-
+// ###################--FLICKITY--###########################
 
 
 var elem = document.querySelector('.main-carousel');
@@ -37,3 +41,26 @@ flkty.on( 'scroll', function( progress ) {
 });
 
 
+// #########################--GOOGLE-MAPS--#####################################
+
+
+window.initMap = function() {
+
+  // var Katowice = carousell[0].coords;
+  // var sydney = carousell[1].coords;
+  // var melbourne = carousell[2].coords;
+
+  var map = new google.maps.Map(
+      document.getElementById('map'), {
+
+          zoom: 7, 
+          center: carousell[0].coords
+      });
+
+      for (var i=0; i<carousell.length; i++) {
+        var marker = new google.maps.Marker({
+          position: carousell[i].coords,
+          map: map
+        });
+      };
+};
