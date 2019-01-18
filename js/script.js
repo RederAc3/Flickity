@@ -1,5 +1,3 @@
-
-
 // ##########################--MUSTACHE--########################################
 
 var templateCarousell = document.getElementById('template-carousell').innerHTML;
@@ -14,13 +12,12 @@ for (var i = 0; i < carousell.length; i++) {
   console.log(carousellItems);
 }
 
-
 // ###################--FLICKITY--###########################
-
 
 var elem = document.querySelector('.main-carousel');
 var button = document.querySelector('.button');
 var progressBar = document.querySelector('.progress-bar');
+var map;
 
 button = fizzyUIUtils.makeArray(button);
 
@@ -40,23 +37,27 @@ flkty.on('scroll', function (progress) {
   progressBar.style.width = progress * 100 + '%';
 });
 
-// #########################--GOOGLE-MAPS--#####################################
+flkty.on('change', function (index) {
+  map.panTo(carousell[index].coords)
+  console.log(index);
+});
 
+// #########################--GOOGLE-MAPS--#####################################
 
 window.initMap = function () {
 
-  var map = new google.maps.Map(
+  map = new google.maps.Map(
     document.getElementById('map'), {
 
       zoom: 7,
       center: carousell[0].coords
     });
 
-    
-    flkty.on('change', function () {
-      new google.maps.Map(
-      map.panTo(carousell[i].coords)
-    )});
+  flkty.on('change', function () {
+    new google.maps.Map(
+      map.panTo(carousell[i])
+    )
+  });
 
   for (var i = 0; i < carousell.length; i++) {
     var marker = new google.maps.Marker({
@@ -71,7 +72,7 @@ window.initMap = function () {
     })(i));
   };
 
-  
+
 
 };
 
