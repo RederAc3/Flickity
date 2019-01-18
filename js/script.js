@@ -40,21 +40,10 @@ flkty.on('scroll', function (progress) {
   progressBar.style.width = progress * 100 + '%';
 });
 
-flkty.on('change', function () {
-  new google.maps.Map(
-  map.panTo(carousell[i].coords)
-)});
-
-
-
 // #########################--GOOGLE-MAPS--#####################################
 
 
 window.initMap = function () {
-
-  // var Katowice = carousell[0].coords;
-  // var sydney = carousell[1].coords;
-  // var melbourne = carousell[2].coords;
 
   var map = new google.maps.Map(
     document.getElementById('map'), {
@@ -62,6 +51,12 @@ window.initMap = function () {
       zoom: 7,
       center: carousell[0].coords
     });
+
+    
+    flkty.on('change', function () {
+      new google.maps.Map(
+      map.panTo(carousell[i].coords)
+    )});
 
   for (var i = 0; i < carousell.length; i++) {
     var marker = new google.maps.Marker({
@@ -75,5 +70,8 @@ window.initMap = function () {
       }
     })(i));
   };
+
+  
+
 };
 
